@@ -11,4 +11,4 @@ Resources:
       Description: ''
       MemorySize: 3008
       Timeout: 60
-      Role: 'arn:aws:iam::290612617581:role/LambdaDynamoDBRole'
+      Role: '***'
