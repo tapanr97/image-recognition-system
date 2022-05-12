@@ -5,7 +5,7 @@ from boto3.dynamodb.conditions import Key
 
 def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('Students')
+    table = dynamodb.Table('***')
     
     recognizedKey = event['value']
     print(recognizedKey)

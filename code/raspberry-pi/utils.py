@@ -22,10 +22,8 @@ def createDirectoryIfNotExists(directory_name):
 
 
 def upload_files_to_S3(file_path, fileName):
-	#print("Sending to s3 " + file_path)
 	try:
 		s3_client.upload_file(file_path, s3_bucket_name, fileName)
-		#print("Uploaded to S3 Successfully")
 	except FileNotFoundError:
 		print('File was not found')
 	except NoCredentialsError:

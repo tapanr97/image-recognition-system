@@ -21,22 +21,17 @@ camera.resolution = resolution
 camera.hflip = True
 camera.brightness = 55 
 
-#camera.zoom = (0.25, 0.25, 1, 1)
-
 def upload_to_s3(filename):
 	mp4_filename = filename.split(".")[0].split("/")[-1] + ".mp4"
 	mp4_filepath = filename.split(".")[0] + ".mp4"
 	command = "MP4Box -add " + filename + ":fps=32" + " -new " + mp4_filepath
 	call([command], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 	upload_files_to_S3(mp4_filepath, mp4_filename)
-	#os.remove(filename)
-	#os.remove(mp4_filepath)
 
 def fn(filename, no):
 	framepath = f'{photos_base_path}/image-{no}.jpeg'
 	command = f"ffmpeg -i {filename} -ss 00:00:00.250 -s 160x160 -vframes 1 -y {framepath}"
 	call([command], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-	#ffmpeg.input(filename, ss=('00:00:00.250')).output(framepath, vframes=1).overwrite_output().run()	
 	post_call(framepath, no)
 	upload_to_s3(filename)
 
@@ -46,7 +41,6 @@ def record_video():
 	filename = f'{videos_base_path}/clip01.h264'
 	print('Recording Started!!!')
 	for i in range(600):
-		#file_no = f"0{i + 1}" if i < 9 else str(i + 1)
 		file_no = ""
 		if i < 9:
 			file_no = f"00{i + 1}"
@@ -90,8 +84,6 @@ if __name__ == '__main__':
 	sleep(2)
 
 	record_video()
-#	upload_to_s3(f'{videos_base_path}/clip01.h264')
-	#merge_videos()
 	camera.stop_preview()
 	for f in os.listdir(videos_base_path):
 		os.remove(os.path.join(videos_base_path, f))

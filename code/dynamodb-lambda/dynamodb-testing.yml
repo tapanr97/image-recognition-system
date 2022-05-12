@@ -11,7 +11,7 @@ Resources:
       Description: ''
       MemorySize: 3008
       Timeout: 3
-      Role: 'arn:aws:iam::290612617581:role/LambdaDynamoDBRole'
+      Role: '***'
       Events:
         Api1:
           Type: Api
