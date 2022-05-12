@@ -7,10 +7,10 @@ import requests
 import time
 
 ##AWS credentials
-AWSAccessKeyId = 'AKIAUHKO4UFWYORI5MXO'
-AWSSecretKey = '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'
+AWSAccessKeyId = '***'
+AWSSecretKey = '***'
 
-api = 'https://5pp7zbuxs7mvmbtxp27hz4bhyi0bltqe.lambda-url.us-east-1.on.aws/'
+api = '***'
 headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
 s3_client = boto3.client('s3', aws_access_key_id=AWSAccessKeyId, aws_secret_access_key=AWSSecretKey)

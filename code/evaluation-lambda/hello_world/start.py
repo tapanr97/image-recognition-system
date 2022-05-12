@@ -53,8 +53,8 @@ def lambda_handler(event, context):
 
     # calling function for evaluation
     # evalResponse = lambdaClient.invoke(
-    #     FunctionName='arn:aws:lambda:us-east-1:290612617581:function:face-rec',
-    #     InvocationType='RequestResponse',
+    #     FunctionName='***',
+    #     InvocationType='***',
     #     Payload=json.dumps({'image': image})
     # )
     startTime = time.time()
@@ -67,8 +67,8 @@ def lambda_handler(event, context):
 
     # getting response from dynamoDB
     # lambdaClient.invoke(
-    #     FunctionName='arn:aws:lambda:us-east-1:290612617581:function:dynamodb-testing',
-    #     InvocationType='Event',
+    #     FunctionName='***',
+    #     InvocationType='***',
     #     Payload=json.dumps({'value': student_info_dynamo_db})
     # )
 
