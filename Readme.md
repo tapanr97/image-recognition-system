@@ -1,9 +1,4 @@
-# CSE 546 Project 2 - Real time Distributed Face Recognition system
-
-## Group Members
-* Tapan Rajnikant Modi (ASU ID : 1222325026)
-* Onkar Pandit (ASU ID: 1222405119)
-* Shreemad Sanskarbhai Patel (ASU ID : 1222713687)
+# Real time Distributed Face Recognition system
 
 ## How to run the code
 * There are 4 folders in the “code” folder - 1) dynamodb-lambda 2) evaluation-lambda 3) web-tier-lambda 4) raspberry-pi. 
